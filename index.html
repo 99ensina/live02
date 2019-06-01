@@ -4,6 +4,123 @@
     </head>
 
     <body>
+        <h1>Bem-vindo a Aula #02</h1>
+
+        <p id="teste"> Olá mundo!</p>
+
+        <!-- a criação do primeiro evento javascript-->
+        <button type="button" onclick='calc(50, 10)'>Clique</button>
+
+        <!-- teste em javascript-->
+        <button type="button" onclick='tipos()'>Testes</button>
+
+        <!-- calculo do n fatorial-->
+        <button type="button" onclick="alert(nFatorial(-1))">Fatorial</button>
         
+        <script>
+
+            // criação da primeira função javascript
+            function trocar() {
+
+                document.getElementById("teste").innerHTML = "Hello World!";
+                
+                //outputs
+                alert("Olá mundo 1");
+                document.write("Olá mundo 2");
+                console.log('Olá mundo 3');
+            }
+
+            // global scope
+            let total = 0;
+
+            function somar() {
+
+                let total = 0;
+
+                // function scope
+                // passagem de parametro por valor
+                let num1 = 50;
+                let num2 = 5;
+
+                total = num1 + num2;
+                console.log('O total é: ', total);
+            }
+
+            let i = 0;
+            function incremento(){
+                i += 10;
+                console.log(i);
+            }
+
+            function tipos(){
+                // dados primitivos
+
+                //number
+                var id = 10;
+                
+                //string
+                var nome = 'Flávio';
+                
+                // object
+                var aluno0 = { nome: 'Rafael', idade: '25' };
+                var aluno1 = { nome: 'Marcio', idade: '30' };
+                var aluno2 = { nome: 'João', idade: '35' };
+
+                // arrays
+                var alunos = [aluno0, aluno1, aluno2];
+                
+                console.log('Aluno 0', alunos[0].nome);
+                console.log('Aluno 1', alunos[1].nome);
+                console.log('Aluno 2', alunos[2].nome);
+            }
+
+            // soma com parametros genericos
+            // passagem de parametros por referência
+            function calc(num1, num2) {
+
+                // operações aritmeticas
+                document.write(num1 + num2);
+                console.log('Soma: ', num1 + num2);
+
+                document.write(num1 * num2);
+                console.log('Multiplicação: ', num1 * num2);
+
+                document.write(num1 / num2);
+                console.log('Divisão: ', num1 / num2);
+
+                document.write(num1 - num2);
+                console.log('Substração: ', num1 - num2);
+
+                /* ** - ES2016 Exponenciação
+                   % -  Módulo
+                   ++ - Incremento
+                   -- - Decremento
+                */
+            }
+
+            function nFatorial(valor){
+
+                // validacao numeros negativos
+                if(valor < 0) {
+                    return 'O valor deve ser maior que 0';
+
+                  // exceções 0 ou 1 
+                } else if( (valor == 0) || (valor == 1) ){
+                    return 1;
+                } else {
+
+                    let i = 1;
+                    for(x=valor; x>1; x--){
+                        i *= x;
+                    }
+
+                    return i;
+                }
+
+            }
+
+        </script>
+
     </body>
+
 </html>
